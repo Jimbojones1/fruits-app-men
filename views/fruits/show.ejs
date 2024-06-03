@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= fruitDoc.name %> Show Page</title>
+</head>
+<body>
+	<header>
+		<a href="/fruits">All Fruits</a>
+	</header>
+	<h1><%= fruitDoc.name %></h1>
+	<% if (fruitDoc.isReadyToEat) { %>
+	 <p>This fruit is ready to be eaten!</p>
+	<% } else { %>
+	 <p>This fruit is not ready to eat!</p>
+	<% } %>
+
+	<form action="/fruits/<%= fruitDoc._id %>?_method=DELETE" method="POST">
+		<button type="submit">Delete Fruit</button>
+	</form>
+	<a href="/fruits/<%= fruitDoc._id %>/edit">Edit <%= fruitDoc.name %></a>
+
+
+</body>
+</html>
